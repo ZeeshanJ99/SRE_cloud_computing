@@ -46,7 +46,9 @@ The seven new stages: planning, analysis, design, development, testing, implemen
 - Medium- development, testing
 - High - implementation, maintenence
 
-**What is On prem, Cloud, Hybrid cloud and multi cloud**
+----------------------------------------------
+
+## What is On prem, Cloud, Hybrid cloud and multi cloud
 
 - On prem - On prem means on premises data centres which allow you to have full control of your infrastructure. All data is in house and stored locally.
 - Cloud - is in regards to data which is is hosted on a vendor's server (such as AWS) and accessed via a web browser. 
