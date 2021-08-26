@@ -66,5 +66,19 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 ![image](https://user-images.githubusercontent.com/88186084/130951730-f24fbf95-0b73-4588-976f-70a498c1e56b.png)
 
+
 **Automate the nginx**
-In the vagrant file use 
+So that nginx starts everytime you open vagrant.
+
+'Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network "private_network", ip: "192.168.10.100"
+    
+    # Synced app folder
+    config.vm.synced_folder "app", "/app"
+
+    # Provisioning
+    config.vm.provision "shell", path: "provision.sh", privileged: false'
+
+end
+
