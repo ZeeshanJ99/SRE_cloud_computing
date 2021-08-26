@@ -69,9 +69,22 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 ----------------------------------------------------------
 
 **Automate provisioning, synced app folder**
-So that nginx starts everytime you open vagrant. in the vagrant file add:
 
-'Vagrant.configure("2") do |config|
+In provision.sh file add:
+            
+    !#/bin/bash
+
+    sudo apt-get update -y
+
+    sudo apt-get upgrade -y
+
+    sudo apt-get install nginx -y
+
+
+In the Vagrantfile add:
+
+    
+    Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
     config.vm.network "private_network", ip: "192.168.10.100"
     
@@ -81,22 +94,29 @@ So that nginx starts everytime you open vagrant. in the vagrant file add:
     # Provisioning
     config.vm.provision "shell", path: "provision.sh", privileged: false
 
-end'
+    end
 
-- Run 'vagrant up'
-- type in the browswer '192.168.10.100'
+- Run `vagrant up`
+- Type in the browswer `192.168.10.100` this should connect to the nginx page on your web browser.
 
 
 **Install dependencies for the node app**
-- installing nodejs 'sudo apt-get install nodejs -y'
 
-Ensure to install correct version
+Installing nodejs sudo `apt-get install nodejs -y`
 
-'sudo apt-get install python-software-properties
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install nodejs -y'
+Ensure to install correct version:
 
-- install pm2 - 'sudo npm install pm2 -g'
-- Ensure to run this inside the app folder - install npm 'npm install'
-- Launch the app 'npm start'
-- put '192.168.10.100:3000' into the browser should go to the Sparta Global app
+    sudo apt-get install python-software-properties
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install nodejs -y
+
+
+
+- Install pm2 - `sudo npm install pm2 -g`
+
+- Ensure to run this inside the app folder - install npm `npm install`
+
+- Launch the app `npm start`
+
+
+- Put `192.168.10.100:3000` into the browser should go to the Sparta Global app
