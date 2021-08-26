@@ -68,7 +68,7 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 ----------------------------------------------------------
 
-## Automate provisioning, synced app folder
+## Automate provisioning and synced app folder
 
 In provision.sh file add:
             
@@ -99,8 +99,9 @@ In the Vagrantfile add:
 - Run `vagrant up`
 - Type in the browswer `192.168.10.100` this should connect to the nginx page on your web browser.
 
+------------------------------------------
 
-**Install dependencies for the node app**
+## Install dependencies for the node app
 
 Installing nodejs sudo `apt-get install nodejs -y`
 
