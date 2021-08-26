@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/ubuntu/app":{"guestpath":"/home/ubuntu/app","hostpath":"C:/Users/Zeeshan/Documents/Deloitte/cloud_computing/app","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Zeeshan/Documents/Deloitte/cloud_computing","disabled":false,"__vagrantfile":true}}}
