@@ -68,7 +68,7 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 ----------------------------------------------------------
 
-**Automate provisioning, synced app folder**
+## Automate provisioning, synced app folder
 
 In provision.sh file add:
             
