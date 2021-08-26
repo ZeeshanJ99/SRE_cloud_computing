@@ -66,9 +66,10 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 ![image](https://user-images.githubusercontent.com/88186084/130951730-f24fbf95-0b73-4588-976f-70a498c1e56b.png)
 
+----------------------------------------------------------
 
-**Automate the nginx**
-So that nginx starts everytime you open vagrant.
+**Automate provisioning, synced app folder**
+So that nginx starts everytime you open vagrant. in the vagrant file add:
 
 'Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
@@ -78,7 +79,24 @@ So that nginx starts everytime you open vagrant.
     config.vm.synced_folder "app", "/app"
 
     # Provisioning
-    config.vm.provision "shell", path: "provision.sh", privileged: false'
+    config.vm.provision "shell", path: "provision.sh", privileged: false
 
-end
+end'
 
+- Run 'vagrant up'
+- type in the browswer '192.168.10.100'
+
+
+**Install dependencies for the node app**
+- installing nodejs 'sudo apt-get install nodejs -y'
+
+Ensure to install correct version
+
+'sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y'
+
+- install pm2 - 'sudo npm install pm2 -g'
+- Ensure to run this inside the app folder - install npm 'npm install'
+- Launch the app 'npm start'
+- put '192.168.10.100:3000' into the browser should go to the Sparta Global app
