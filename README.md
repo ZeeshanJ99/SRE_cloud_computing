@@ -22,20 +22,23 @@ SREs need to understand the resilience measures of their service and know when t
 
 Cloud computing is the delivery of different services through the Internet, including data storage, servers, databases, networking, and software. 
 Cloud-based storage makes it possible to save files to a remote database and retrieve them on demand
-The benefits include cost saving - easy access saves money and time in project startups, security- 94% of businesses saw an improvement in security (rapid scale), mobility- by relying on an outside organisation you have more time to focus upon other parts of the business, insight - et to see
+The benefits include cost saving - easy access saves money and time in project startups, security- 94% of businesses saw an improvement in security (rapid scale) also dont need to employ your own security, mobility- by relying on an outside organisation you have more time to focus upon other parts of the business, insight - is able to provide information about users. scale on demand - cost effective. 
 
 
 **What is Amazon Web Services (AWS)**
 - What is AWS and benefits of using it
+
 AWS is the worlds most comprehensive cloud platform that includes a mixture of infrastructure as a service (IaaS), platform as a service (PaaS) and packaged software as a service (SaaS) offerings.
 AWS can be used to store critical data. It offers multiple types of storage to choose from, allowing businesses to make their own decisions based on their needs.
 
 **What is SDLC and stages of SDLC**
 - What is SDLC and what are the stages of it
-software development life cycle is a process for planning, creating, testing and deploying an information system
+
+Software Development Life Cycle is a process for planning, creating, testing and deploying an information system
 The seven new stages: planning, analysis, design, development, testing, implementation, and maintenance.
 
 **What are the Risk level at each stage of SDLC?**
+
 - LOW - planning, analysis, design
 - Medium- development, testing
 - High - implementation, maintenence
