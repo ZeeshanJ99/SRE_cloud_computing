@@ -35,6 +35,9 @@ AWS can be used to store critical data. It offers multiple types of storage to c
 software development life cycle is a process for planning, creating, testing and deploying an information system
 The seven new stages: planning, analysis, design, development, testing, implementation, and maintenance.
 
+![image](https://user-images.githubusercontent.com/88186084/130949727-d4387c63-bb70-42dd-816f-ba1a667e8e90.png)
+
+
 **What are the Risk level at each stage of SDLC?**
 - LOW - planning, analysis, design
 - Medium- development, testing
