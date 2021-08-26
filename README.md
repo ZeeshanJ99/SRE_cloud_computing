@@ -46,7 +46,9 @@ The seven new stages: planning, analysis, design, development, testing, implemen
 - Medium- development, testing
 - High - implementation, maintenence
 
-**What is On prem, Cloud, Hybrid cloud and multi cloud**
+----------------------------------------------
+
+## What is On prem, Cloud, Hybrid cloud and multi cloud
 
 - On prem - On prem means on premises data centres which allow you to have full control of your infrastructure. All data is in house and stored locally.
 - Cloud - is in regards to data which is is hosted on a vendor's server (such as AWS) and accessed via a web browser. 
@@ -68,7 +70,64 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 
 
+
 - install nodejs
 - install npm
 - install pm2
 - npm start
+
+----------------------------------------------------------
+
+## Automate provisioning and synced app folder
+
+In provision.sh file add:
+            
+    !#/bin/bash
+
+    sudo apt-get update -y
+
+    sudo apt-get upgrade -y
+
+    sudo apt-get install nginx -y
+
+
+In the Vagrantfile add:
+
+    
+    Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.network "private_network", ip: "192.168.10.100"
+    
+    # Synced app folder
+    config.vm.synced_folder "app", "/app"
+
+    # Provisioning
+    config.vm.provision "shell", path: "provision.sh", privileged: false
+
+    end
+
+- Run `vagrant up`
+- Type in the browswer `192.168.10.100` this should connect to the nginx page on your web browser.
+
+------------------------------------------
+
+## Install dependencies for the node app
+
+Installing nodejs sudo `apt-get install nodejs -y`
+
+Ensure to install correct version:
+
+    sudo apt-get install python-software-properties
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install nodejs -y
+
+
+
+- Install pm2 - `sudo npm install pm2 -g`
+
+- Ensure to run this inside the app folder - install npm `npm install`
+
+- Launch the app `npm start`
+
+
+- Put `192.168.10.100:3000` into the browser should go to the Sparta Global app
