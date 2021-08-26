@@ -65,3 +65,6 @@ Multi-cloud entails multiple cloud services from one or more providers, for exam
 
 
 ![image](https://user-images.githubusercontent.com/88186084/130951730-f24fbf95-0b73-4588-976f-70a498c1e56b.png)
+
+**Automate the nginx**
+In the vagrant file use 
