@@ -131,3 +131,24 @@ Ensure to install correct version:
 
 
 - Put `192.168.10.100:3000` into the browser should go to the Sparta Global app
+
+
+
+
+-------------------------------
+## Multi-machine proxy task with reverse proxy
+
+`sudo nano /etc/nginx/sites-available/default`
+
+replace the location in the file, you can replace the port code 8080 to whatever you need it to be.
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
