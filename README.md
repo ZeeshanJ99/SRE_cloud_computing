@@ -136,7 +136,7 @@ Ensure to install correct version:
 
 
 -------------------------------
-## Multi-machine proxy task with reverse proxy
+## Multi-machine task with reverse proxy
 
 `sudo nano /etc/nginx/sites-available/default`
 
