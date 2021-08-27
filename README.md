@@ -150,5 +150,12 @@ replace the location in the file, you can replace the port code 8080 to whatever
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
-}
+            }
+            
+- `sudo nginx -t`
+- `sudo systemctl restart nginx`
+- restart the node app from the app location
+- `npm start`
+- check your browser without the port 3000            
+
 
