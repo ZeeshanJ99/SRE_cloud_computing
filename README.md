@@ -142,15 +142,21 @@ Ensure to install correct version:
 
 replace the location in the file, you can replace the port code 8080 to whatever you need it to be, e.g. 3000
 
+    server {
+    listen 80;
+
+    server_name _;
+
     location / {
-        proxy_pass http://localhost:8080;
+        proxy_pass http://localhost:3000;      
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
+        proxy_set_header Connection 'upgrade'; 
         proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+        proxy_cache_bypass $http_upgrade;      
     }
             }
+
             
 - `sudo nginx -t`
 - `sudo systemctl restart nginx`
