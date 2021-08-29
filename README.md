@@ -138,6 +138,7 @@ Ensure to install correct version:
 -------------------------------
 ## Multi-machine task with reverse proxy
 
+- in app
 `sudo nano /etc/nginx/sites-available/default`
 
 replace the location in the file, you can replace the port code 8080 to whatever you need it to be, e.g. 3000
@@ -166,7 +167,7 @@ replace the location in the file, you can replace the port code 8080 to whatever
 
 
 ## If mongodb is installed
-
+- in db
 `sudo nano /etc/mongod.conf`
 ip `127.0.0.1` change to `0.0.0.0`
 
@@ -174,6 +175,7 @@ ip `127.0.0.1` change to `0.0.0.0`
 - enable mongo
 - check status
 
+--------------------------------------------------------------
 ## If it isnt installed this is how to set up mongo db
 - be careful of these keys, they will go out of date
             
@@ -197,6 +199,6 @@ change the mongod.conf ip to `0.0.0.0`
 
             source ~/.bashrc
             
-- cd app
+- cd into the app folder
 - sudo npm start
 - go to 192.168.10.100/posts on the web browser
