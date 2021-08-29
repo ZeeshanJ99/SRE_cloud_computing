@@ -167,7 +167,7 @@ replace the location in the file, you can replace the port code 8080 to whatever
 
 ## If mongodb is installed
 
-`sudo nano /etc/mongo.conf`
+`sudo nano /etc/mongod.conf`
 ip `127.0.0.1` change to `0.0.0.0`
 
 - restart mongo
