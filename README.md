@@ -140,7 +140,7 @@ Ensure to install correct version:
 
 `sudo nano /etc/nginx/sites-available/default`
 
-replace the location in the file, you can replace the port code 8080 to whatever you need it to be.
+replace the location in the file, you can replace the port code 8080 to whatever you need it to be, e.g. 3000
 
     location / {
         proxy_pass http://localhost:8080;
@@ -159,3 +159,38 @@ replace the location in the file, you can replace the port code 8080 to whatever
 - check your browser without the port 3000            
 
 
+## If mongodb is installed
+
+`sudo nano /etc/mongo.conf`
+ip `127.0.0.1` change to `0.0.0.0`
+
+- restart mongo
+- enable mongo
+- check status
+
+## If it isnt installed this is how to set up mongo db
+- be careful of these keys, they will go out of date
+            
+            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
+            echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+            sudo apt-get update -y
+            sudo apt-get upgrade -y
+
+- sudo apt-get install mongodb-org=3.2.20 -y
+
+            sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
+change the mongod.conf ip to `0.0.0.0`
+
+- back to app VM to create the env var export `DB_HOST=db-ip/posts`
+            
+            export DB_HOST=192.168.10.150:27017/posts
+
+            echo "export DB_HOST=192.168.10.150:27017/posts" >> ~/.bashrc
+
+            source ~/.bashrc
+            
+- cd app
+- sudo npm start
+- go to 192.168.10.100/posts on the web browser
