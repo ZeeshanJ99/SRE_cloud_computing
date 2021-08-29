@@ -21,5 +21,5 @@ export DB_HOST=192.168.10.150:27017/posts
 echo "export DB_HOST=192.168.10.150:27017/posts" >> ~/.bashrc
 source ~/.bashrc
 
-sudo nginx -tee
+sudo nginx -t
 sudo systemctl restart nginx
