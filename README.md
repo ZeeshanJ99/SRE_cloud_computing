@@ -201,4 +201,5 @@ change the mongod.conf ip to `0.0.0.0`
             
 - cd into the app folder
 - sudo npm start
+- inject the database into the app `node seeds/seed.js`
 - go to 192.168.10.100/posts on the web browser
