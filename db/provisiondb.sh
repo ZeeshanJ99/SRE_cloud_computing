@@ -12,7 +12,9 @@ sudo apt-get update
 # install and verify
 sudo apt-get install -y mongodb-org
 
+# sudo rm /etc/mongod.conf
+# sudo ln -s /home/ubuntu/mongod/mongo_db_settings.conf /etc/mongod.conf
+
 # start MongoDB
 sudo systemctl start mongod
 sudo systemctl enable mongodb
-sudo ufw allow from 192.168.10.100/32 to any port 27017

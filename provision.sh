@@ -17,9 +17,12 @@ cd /home/ubuntu/app/app
 sudo npm install pm2 -get
 npm install
 
-export DB_HOST=192.168.10.150:27017/posts
-echo "export DB_HOST=192.168.10.150:27017/posts" >> ~/.bashrc
-source ~/.bashrc
+# sudo rm /etc/nginx/sites-available/default
+# sudo ln -s /home/ubuntu/app/app/reverse_proxy_settings.txt /etc/nginx/sites-available/default
+
+sudo systemctl restart nginx
+
+echo "DB_HOST=mongodb://192.168.10.150:27017/posts" | sudo tee -a /etc/environment
 
 sudo nginx -t
 sudo systemctl restart nginx
